@@ -1,7 +1,21 @@
 import './Header.css';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {useDispatch } from 'react-redux';
+import Users from '../../services/users';
 
 function Header(){
+
+  const usersInfo = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
+  const onLogout=(event)=>{
+        event.preventDefault();
+        Users.logout(dispatch);
+        navigate('/');
+  }
     return (<div>
                <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="#"><i className="fa fa-address-book-o" aria-hidden="true"></i></a>
@@ -24,10 +38,18 @@ function Header(){
                     <a className="nav-link" href="#">Contact</a>
                   </li>
               </ul>
+              {!usersInfo.loginStatus &&
               <form className="form-inline my-2 my-lg-0">
-                <button className="btn btn-outline-success my-2 my-sm-0 submit-register" type="submit"><Link to="/">Sign Up</Link></button>
-                <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><Link to="Login">Login</Link></button>
-              </form>
+              <button className="btn btn-outline-success my-2 my-sm-0 submit-register" type="submit"><Link to="/">Sign Up</Link></button>
+              <button className="btn btn-outline-success my-2 my-sm-0" type="submit"><Link to="Login">Login</Link></button>
+            </form>
+               }
+
+{usersInfo.loginStatus &&
+              <form className="form-inline my-2 my-lg-0">
+              <button className="btn btn-outline-success my-2 my-sm-0 submit-register"  onClick={onLogout} type="submit">Logout</button>
+            </form>
+               }
             </div>
           </nav>
     </div>)

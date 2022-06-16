@@ -1,9 +1,12 @@
 import './Login.css';
 import Libraryimg from '../../Assests/Library_image1.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import { useState } from 'react';
 import { emailValidation, passwordValidation } from '../Validation';
+import {useDispatch} from 'react-redux';
+import Users from '../../services/users';
 function Login() {
+  const dispatch=useDispatch();
   const navigate = useNavigate();
   const [getForm, setForm] = useState({
     email: '',
@@ -29,6 +32,43 @@ function Login() {
       let password = sessionStorage.getItem('password');
       if (email === getForm.email && password === getForm.password) {
         alert("Login Success");
+        Users.loadUsers(dispatch,email,password);
+        navigate('/Search');
+      }
+      else {
+        if (email !== getForm.email && password === getForm.password) {
+          setValidation({
+            email: "Invalid data",
+            password: ""
+          });
+        }
+        else if (email === getForm.email && password !== getForm.password) {
+          setValidation({
+            email: "",
+            password: "Invalid data"
+          });
+        }
+        else if (email !== getForm.email && password !== getForm.password) {
+          setValidation({
+            email: "Invalid data",
+            password: "Invalid data"
+          });
+        }
+      }
+    }
+  }
+  const onSubmitHandler1 = (event) => {
+    event.preventDefault();
+    setValidation({
+      ...getValidation, email: !emailValidation(getForm.email) ? "Invalid data" : "",
+      password: !passwordValidation(getForm.password) ? "Invalid data" : ""
+    });
+    if (emailValidation(getForm.email) && passwordValidation(getForm.password)) {
+      let email = sessionStorage.getItem('email');
+      let password = sessionStorage.getItem('password');
+      if (email === getForm.email && password === getForm.password) {
+        alert("Login Success");
+        Users.loadUsers(dispatch,email,password);
         navigate('/adminSearch');
       }
       else {
@@ -79,7 +119,15 @@ function Login() {
                   {getValidation.password}
                 </div>}
               </div>
-              <button type="submit" onClick={onSubmitHandler} className="btn btn-warning">Login</button>
+              <table><thead>
+                  <tr>
+                    <td><button type="submit" onClick={onSubmitHandler} className="btn btn-warning">User Login</button></td>
+                    <td><button type="submit" onClick={onSubmitHandler1} className="btn btn-warning">Admin Login</button></td>
+                    <td><button type="submit" className="btn btn-warning"><Link to='/' className="but">Sign Up</Link></button></td></tr>
+                </thead>
+                </table><br />
+              <span>
+              </span>
             </form>
           </div>
         </div>

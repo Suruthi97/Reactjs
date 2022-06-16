@@ -2,8 +2,12 @@ import './Login.css';
 import {Link,useNavigate} from 'react-router-dom';
 import {useState} from 'react';
 import {emailValidation,passwordValidation}  from '../Validation';
+import {useDispatch } from 'react-redux';
+import Users from '../../services/users';
+
 function Login(){
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const[getForm,setForm]=useState({
@@ -34,6 +38,7 @@ function Login(){
       let email = sessionStorage.getItem('email');
       let password = sessionStorage.getItem('password');
       if(email === getForm.email && password === getForm.password){
+        Users.loadUsers(dispatch,email,password);
         navigate('/dashboard');
       }
       else{

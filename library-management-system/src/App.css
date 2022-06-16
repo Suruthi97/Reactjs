@@ -12,7 +12,7 @@
 }
 .nav-link{
   color: #eeee;
-  margin-left:100px;
+  margin-left:80px;
 }
 a:link{
   text-decoration: none;
@@ -173,5 +173,8 @@ a:active{
   background-color: #f9b004;
   border-color: #f9b004;
   border-radius:20px;
+  color:#ffff;
+}
+.but{
   color:#ffff;
 }

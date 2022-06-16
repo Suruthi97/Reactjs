@@ -1,11 +1,11 @@
 import './App.css';
 import './assests/font-awesome/css/font-awesome.min.css';
-import Header from './Components/Header/Header';
-import Register from './Components/Register/Register';
-import Login from './Components/Login/Login';
-import About from './Components/About/About';
-import Dashboard from './Components/Dashboard/Dashboard';
-import AddExpense from './Components/AddExpense/AddExpense';
+import Header from './components/Header/Header';
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import About from './components/About/About';
+import Dashboard from './components/Dashboard/Dashboard';
+import AddExpense from './components/AddExpense/AddExpense';
 import {BrowserRouter,Routes, Route} from 'react-router-dom';
 
 function App() {

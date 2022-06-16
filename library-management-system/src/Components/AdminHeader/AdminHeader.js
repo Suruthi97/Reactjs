@@ -1,6 +1,15 @@
 import './AdminHeader.css';
-import { Link } from 'react-router-dom';
-function AdminHeader(){
+import { Link,useNavigate } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import Users from '../../services/users';
+function AdminHeader(){const dispatch=useDispatch();
+  const navigate = useNavigate();
+  const userInfo=useSelector((state)=>state.users);
+  const onLogout=(event)=>{
+    event.preventDefault();
+    Users.logout(dispatch);
+    navigate('/login');
+  }
     return(<div>
         <nav className="navbar navbar-expand">
             <Link className="navbar-brand" to="#"><i className="fa fa-university" aria-hidden="true"></i></Link>
@@ -10,16 +19,16 @@ function AdminHeader(){
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/home">Home <span className="sr-only">(current)</span></Link>
+                    <Link className="nav-link" to="/adminHome">Home <span className="sr-only">(current)</span></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">About Library</Link>
+                  <Link className="nav-link" to="/adminAbout">About Library</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/rules">Rules & Regulations</Link>
+                    <Link className="nav-link" to="/adminRules">Rules & Regulations</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/price">Price Card</Link>
+                  <Link className="nav-link" to="/adminPrice">Price Card</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/adminSearch">Search</Link>
@@ -27,6 +36,16 @@ function AdminHeader(){
                 <li className="nav-item">
                   <Link className="nav-link" to="/addBook">Add Book</Link>
               </li>
+              {!userInfo.loginStatus && 
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/Login">Login</Link>
+                      </li>
+                    }
+                    {userInfo.loginStatus && 
+                    <li className="nav-item">
+                    <Link className="nav-link" to="/Login" onClick={onLogout}>Logout</Link>
+                    </li>
+                    }
               </ul>
             </div>
         </nav>

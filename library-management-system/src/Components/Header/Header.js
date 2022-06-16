@@ -1,6 +1,16 @@
 import './Header.css';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import {useSelector, useDispatch} from 'react-redux';
+import Users from '../../services/users';
 function Header(){
+  const dispatch=useDispatch();
+  const navigate = useNavigate();
+  const userInfo=useSelector((state)=>state.users);
+  const onLogout=(event)=>{
+    event.preventDefault();
+    Users.logout(dispatch);
+    navigate('/login');
+  }
     return(
         <div>
           <nav className="navbar navbar-expand">
@@ -25,6 +35,17 @@ function Header(){
                 <li className="nav-item">
                     <Link className="nav-link" to="/Search">Search</Link>
                   </li>
+                  
+                    {!userInfo.loginStatus && 
+                    <li className="nav-item">
+                      <Link className="nav-link" to="/Login">Login</Link>
+                      </li>
+                    }
+                    {userInfo.loginStatus && 
+                    <li className="nav-item">
+                    <Link className="nav-link" to="/Login" onClick={onLogout}>Logout</Link>
+                    </li>
+                    }
               </ul>
             </div>
         </nav>
