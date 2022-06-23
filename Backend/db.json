@@ -82,13 +82,6 @@
   ],
   "library": [
     {
-      "title": "Book1",
-      "desc": "Description",
-      "auth": "Author",
-      "avail": 6,
-      "id": 1
-    },
-    {
       "title": "Book3",
       "desc": "Description",
       "auth": "Author",
@@ -102,5 +95,6 @@
       "avail": "7",
       "id": 8
     }
-  ]
+  ],
+  "hospital": []
 }
