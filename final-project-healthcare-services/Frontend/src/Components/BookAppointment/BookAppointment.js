@@ -22,6 +22,9 @@ function BookAppointment() {
         }).catch((error) => {
             console.log(error);
         })
+        // if (JSON.parse(sessionStorage.getItem('bookDetails')) && JSON.parse(sessionStorage.getItem('bookDetails')).length > 0) {
+        //     setList(JSON.parse(sessionStorage.getItem('bookDetails')))
+        // }
     }, [])
     const onChangeHandler=(event)=>{
         setApp({
