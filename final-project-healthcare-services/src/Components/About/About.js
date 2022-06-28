@@ -16,21 +16,21 @@ function About() {
                     </tr>
                 </tbody>
             </table>
-            <div class="modal" id="mod" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">About Online Healthcare services</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal" id="mod" role="dialog">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title">About Online Healthcare services</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             <p>Find a Doctor today and Book your Appointment Online Now</p>
                             <div>A doctor appointment booking system, available on the internet, allows patients to book an appointment from the comfort of their homes, using their computer, laptop or mobile, and at any time. No matter where they are, they can contact doctors of their choice in any location.</div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
