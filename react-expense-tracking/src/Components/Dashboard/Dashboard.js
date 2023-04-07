@@ -112,7 +112,7 @@ const Dashboard=()=>{
                         
                         </div>       
                         <button onClick={searchFilter} type="submit" className="btn btn-success">Search</button>
-                        <button onClick={resetFilter}>Reset</button>
+                        <button onClick={resetFilter} className="btn btn-success">Reset</button>
                       </form>
                 </div>
                 <div className="col-7"></div>

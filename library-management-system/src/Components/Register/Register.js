@@ -81,14 +81,14 @@ function Register() {
               <div className="form-group">
                 <label><h6>Email address</h6></label>
                 <input type="email" onChange={onChangeHandler} value={getForm.email} className="form-control" id="email" name="email" placeholder="Enter email" />
-                {getValidation.email && <div class="alert alert-danger" role="alert">
+                {getValidation.email && <div className="alert alert-danger" role="alert">
                   {getValidation.email}
                 </div>}
               </div>
               <div className="form-group">
                 <label><h6>Password</h6></label>
                 <input type="password" onChange={onChangeHandler} value={getForm.password} className="form-control" id="password" name="password" placeholder="Enter Password" />
-                {getValidation.password && <div class="alert alert-danger" role="alert">
+                {getValidation.password && <div className="alert alert-danger" role="alert">
                   {getValidation.password}
                 </div>}
               </div>

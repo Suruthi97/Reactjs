@@ -7,17 +7,17 @@ function Contact() {
                     <tbody>
                         <tr>
                             <td className="data3">
-                                <p className="text-center"><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+                                <p className="text-center"><i className="fa fa-map-marker" aria-hidden="true"></i></p>
                                 <p className="text-center">ADDRESS</p>
                                 <p className="text-center">27 13 Lowe Haven</p>
                             </td>
                             <td className="data3">
-                                <p className="text-center"><i class="fa fa-mobile" aria-hidden="true"></i></p>
+                                <p className="text-center"><i className="fa fa-mobile" aria-hidden="true"></i></p>
                                 <p className="text-center">PHONE</p>
                                 <p className="text-center">111 343 43 43</p>
                             </td>
                             <td className="data3">
-                                <p className="text-center"><i class="fa fa-file-text-o" aria-hidden="true"></i></p>
+                                <p className="text-center"><i className="fa fa-file-text-o" aria-hidden="true"></i></p>
                                 <p className="text-center">EMAIL</p>
                                 <p className="text-center">business@info.com</p>
                             </td>

@@ -1,0 +1,97 @@
+@import "@scottish-government/pattern-library/src/pattern-library";
+
+.MuiToolbar-root {
+  // border-bottom: 1px solid #105B7D;
+  border-top: 7px solid #105b7d;
+}
+.app-logo {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+.container {
+  border: 1px solid #cfe8fc;
+  height: 100vh;
+  width: 100%;
+}
+.cardContainer {
+  height: 90vh;
+  width: 100%;
+  overflow: auto;
+}
+.formContainer {
+  height: auto;
+  width: 100%;
+}
+.formItem {
+  width: 100%;
+}
+.formItemLeft {
+  width: 33%;
+  text-align: left;
+}
+.formItemRight {
+  width: 33%;
+  margin-left: 10% !important;
+}
+.innerContainer {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border-top: 2px solid #000;
+  padding-top: 40px;
+  padding-bottom: 25px;
+  max-height: max-content;
+}
+.ds_button-green {
+  background-color: rgb(28, 141, 28);
+}
+.ds_input_with_helpertext {
+  margin-bottom: 10px;
+}
+.ds_accordion-item__header, .ds_accordion-item__header-button, .ds_accordion-item__body {
+  padding-right: 15px;
+}
+.ds_accordion-item__title {
+  width: 100%;
+  margin-top: 2px;
+}
+.ds_accordion-item__header, .ds_accordion-item__header-button {
+  display: flex;
+}
+.ds_accordion-icon {
+  margin-top: 2px;
+}
+.ds_accordian-subitem {
+  font-weight: normal;
+}
+.ds_select_arrow {
+  background: $ds_colour__button__background;
+  color: #ffffff;
+  bottom: 0;
+  outline: 2px solid transparent;
+  outline-offset: -2px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;  
+  top: 0;  
+  width: 48px;
+  display: flex;
+  align-items: center;
+}
+.ds_button--max {
+  max-width: 400px;
+  margin-right: 50px !important;
+}
+.pdfContainer {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+}
+.pdf {
+  height: 100%;
+  width: 100%;
+}
+.logoutButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

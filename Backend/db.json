@@ -85,16 +85,187 @@
       "title": "Book3",
       "desc": "Description",
       "auth": "Author",
-      "avail": "15",
+      "avail": "55",
       "id": 6
     },
     {
-      "title": "Book7",
-      "desc": "Desc",
-      "auth": "Auth",
-      "avail": "7",
+      "title": "Book1",
+      "desc": "Description",
+      "auth": "Author",
+      "avail": "10",
+      "id": 7
+    },
+    {
+      "title": "Book2",
+      "desc": "Description",
+      "auth": "Author",
+      "avail": "5",
       "id": 8
     }
   ],
-  "hospital": []
+  "hospital": [],
+  "netflix": [
+    {
+      "id": 1,
+      "image": "./Images/img1",
+      "title": "img1"
+    },
+    {
+      "id": 2,
+      "image": "./Images/img2",
+      "title": "img2"
+    }
+  ],
+    "userDetails": [
+      {
+        "firstName": "Suruthi",
+        "surname": "S",
+        "email": "swathi@abc.com",
+        "phoneNo": "12345678990",
+        "password": "abC123(",
+        "role": "solicitor",
+        "id": 1
+      },
+      {
+        "firstName": "swathi",
+        "surname": "s",
+        "email": "abc@gmail.com",
+        "phoneNo": "12345678990",
+        "password": "abC123)",
+        "role": "user",
+        "id": 2
+      },
+      {
+        "firstName": "Suruthi",
+        "surname": "R",
+        "email": "suruthi@gmail.com",
+        "phoneNo": "1234567890",
+        "password": "abC123)",
+        "role": "solicitor",
+        "id": 3
+      },
+      {
+        "firstName": "swathi",
+        "surname": "K",
+        "email": "abcd@gmail.com",
+        "phoneNo": "2314567890",
+        "password": "abC123*",
+        "role": "user",
+        "id": 4
+      }
+    ],
+    "profileDetails": [
+      {
+        "userName": "wsad",
+        "about": "asdfasdfvvsdv",
+        "firstName": "asdf",
+        "lastName": "asdf",
+        "email": "asdf@dsfsd.com",
+        "country": "Canada",
+        "street": "asdf",
+        "city": "sdfasdf",
+        "state": "adsf",
+        "postal": "600067",
+        "photo": "",
+        "cover": "",
+        "id": 3
+      },
+      {
+        "userName": "thilaka28",
+        "about": "hello",
+        "firstName": "thilagam",
+        "lastName": "kannan",
+        "email": "thilaka28@gmail.com",
+        "country": "Canada",
+        "street": "ram street",
+        "city": "chennai",
+        "state": "tamilnadu",
+        "postal": "600062",
+        "photo": "",
+        "cover": "",
+        "id": 4
+      },
+      {
+        "userName": "vxcvaa",
+        "about": "zcxvzc",
+        "firstName": "zxcvz",
+        "lastName": "zcxvzx",
+        "email": "zxcv@adfsd.com",
+        "country": "Canada",
+        "street": "asdfas",
+        "city": "asdfa",
+        "state": "adsf",
+        "postal": "123123",
+        "id": 5
+      },
+      {
+        "userName": "fgsdfg",
+        "about": "sdfgsdfg",
+        "firstName": "sfgsdf",
+        "lastName": "sfdg",
+        "email": "sfgsfg@gmail.com",
+        "country": "Canada",
+        "street": "sfdgdf",
+        "city": "sdfgd",
+        "state": "sdfg",
+        "postal": "123456",
+        "photo": "",
+        "cover": "",
+        "id": 7
+      },
+      {
+        "userName": "thilaka28",
+        "about": "zcvzcxv",
+        "firstName": "Thilagam",
+        "lastName": "kannan",
+        "email": "thilaka28@gmail.com",
+        "country": "Canada",
+        "street": "asdf",
+        "city": "asgas",
+        "state": "sdfg",
+        "postal": "asdgasdg",
+        "id": 8
+      },
+      {
+        "userName": "aasdg",
+        "about": "agasdg",
+        "firstName": "adgasdg",
+        "lastName": "asdg",
+        "email": "asdg@ssdfg@.com",
+        "country": "Canada",
+        "street": "dgasg",
+        "city": "asgasg",
+        "state": "asga",
+        "postal": "23434",
+        "id": 9
+      },
+      {
+        "formData": {},
+        "userName": "vzxcv",
+        "about": "zxcvzxcv",
+        "firstName": "zcvzxcv",
+        "lastName": "zxcvzxv",
+        "email": "zxcv@gsgs.com",
+        "country": "Mexico",
+        "street": "sdfasdf",
+        "city": "asdfasd",
+        "state": "asdfas",
+        "postal": "123141",
+        "id": 12
+      },
+      {
+        "formData": {},
+        "userName": "zdsdf",
+        "about": "asdfasdf",
+        "firstName": "dfasdf",
+        "lastName": "asdfc",
+        "email": "zxcv@sadf.com",
+        "country": "Canada",
+        "street": "cvzcv",
+        "city": "zvzxcv",
+        "state": "zcvzcv",
+        "postal": "123123",
+        "id": 14
+      }
+    ]
 }

@@ -1,0 +1,441 @@
+@import "@scottish-government/pattern-library/src/pattern-library";
+
+
+$iconsfile: '../images/icons/icons.stack.svg' !default;
+/*------------------------------------*\
+    $BREADCRUMBS
+\*------------------------------------*/
+
+// fixed vars
+$breadcrumbs__colour: $ds_colour__text--secondary;
+$breadcrumbs__font-size: $small-size--fixed;
+
+
+
+
+.ds_breadcrumbs {
+    color: $breadcrumbs__colour;
+    font-size: $breadcrumbs__font-size;
+    line-height: 24px;
+    padding-left: 0;
+    margin: 24px 0 16px;
+
+    &__item {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item:not(:first-child){
+        .ds_breadcrumbs__link {
+            margin-left: -2px; // Negative margin to offset the 2px outline on links
+        }
+
+        &::before {
+            @include ds_chevron(right, 0.333333em);
+            margin: 0 8px 0 6px;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    &__container {
+        padding-top: 16px;
+    }
+
+    @include ds_media-query(medium) {
+        &__container {
+            padding-top: 24px;
+        }
+    }
+
+    @supports (display: flex) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.ds_reversed .ds_breadcrumbs {
+    color: $ds_colour__white;
+}
+/*------------------------------------*\
+    BUTTONS
+\*------------------------------------*/
+
+$button__border-width: 2px !default;
+$button__outline-width: 3px !default;
+$button__padding--x: 16px !default;
+$link__border-width: 3px;
+
+
+
+///
+/// [1] renders an outline/border in windows high contrast mode
+///
+.ds_button {
+    @include ds_small-size;
+    @include ds_button-sizing;
+
+    background: $ds_colour__button__background;
+    border: 0;
+    border-radius: 0;
+    color: $ds_colour__button;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $bold;
+    line-height: 24px;
+    outline: 2px solid transparent; /// [1]
+    outline-offset: -2px; /// [1]
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color $transition-out-time;
+
+    @include ds_block-margins;
+
+    &:hover {
+        background-color: $ds_colour__button--hover__background;
+        color: $ds_colour__button;
+        outline-color: transparent;
+        transition-duration: $transition-in-time;
+    }
+
+    &:focus {
+        background-color: $ds_colour__button--focus__background;
+        box-shadow: 0 $link__border-width $ds_colour__link--focus__shadow;
+        color: $ds_colour__button--focus;
+        outline: 0;
+        transition-duration: 0s;
+
+        @include ds_high-contrast-focus(4px);
+    }
+
+    // ICONS ON BUTTONS
+    .ds_icon {
+        pointer-events: none;
+    }
+
+    &[disabled] {
+        background-color: $ds_colour__grey;
+        box-shadow: none;
+        color: $ds_colour__white;
+        font-weight: $normal;
+        outline: none;
+        pointer-events: none;
+    }
+}
+
+.ds_reversed .ds_button {
+    background-color: $ds_colour__white;
+    color: $ds_colour__button__background;
+
+    &:focus,
+    &:hover:focus {
+        background-color: $ds_colour__blocklink-bg--focus;
+    }
+
+    &:hover {
+        background-color: $ds_colour__blocklink-bg--hover;
+    }
+
+    &--secondary {
+        background-color: transparent;
+        border-color: currentColor;
+        color: $ds_colour__white;
+
+        &:hover:not(:focus) {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: $ds_colour__white;
+            outline-color: currentColor;
+        }
+    }
+}
+
+.ds_button {
+    &--secondary {
+        background-color: $ds_colour__button--secondary__background;
+        color: $ds_colour__button--secondary;
+        outline: 2px solid currentColor;
+        outline-offset: -2px;
+
+        &:hover:not(:focus) {
+            background-color: $ds_colour__button--secondary--hover__background;
+            color: $ds_colour__button--secondary--hover;
+            outline: 2px solid currentColor;
+            outline-offset: -2px;
+        }
+    }
+
+    &--cancel {
+        background-color: $ds_colour__button--cancel__background;
+        color: $ds_colour__button--cancel;
+        outline: 2px solid currentColor;
+        outline-offset: -2px;
+
+        &:hover:not(:focus) {
+            background-color: $ds_colour__button--cancel--hover__background;
+            color: $ds_colour__button--cancel;
+            outline: 2px solid currentColor;
+            outline-offset: -2px;
+        }
+    }
+}
+
+// SIZE VARIANTS
+.ds_button {
+    &--small {
+        @include ds_small-size;
+        @include ds_button-sizing--small;
+    }
+}
+
+// WIDTH VARIANTS
+.ds_button {
+    &--fixed {
+        width: 200px;
+
+        &.ds_button--small {
+            width: 160px;
+        }
+    }
+
+    &--max {
+        max-width: 480px;
+        width: 100%;
+    }
+}
+
+// STACKED BUTTONS
+.ds_button-group {
+    @include ds_block-margins;
+
+    >.ds_button {
+        margin: 0 0 24px;
+        @include ds_last-child-no-margin;
+    }
+}
+
+// BUTTONS WITH ICONS
+// n.b. icon sizing is included in the ds_button-sizing mixins
+.ds_button {
+    .ds_icon {
+        bottom: 0;
+        box-sizing: content-box;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &--has-icon {
+        padding-right: calc(#{$button__height} + #{$button__padding--x});
+    }
+
+    &--has-icon--left {
+        padding-left: calc(#{$button__height} + #{$button__padding--x});
+        padding-right: #{$button__padding--x};
+
+        .ds_icon {
+            left: 0;
+            right: auto;
+        }
+    }
+}
+/*------------------------------------*\
+    DATE PICKER
+\*------------------------------------*/
+
+
+.ds_datepicker {
+  position: relative;
+
+  &__dialog {
+      @include ds_box-shadow;
+
+      background-color: $ds_colour__white;
+      clear: both;
+      display: none;
+      padding: 8px;
+      outline: 1px solid $ds_colour__border;
+      outline-offset: -1px;
+      position: static;
+      top: 0;
+      transition: background-color 0.2s, outline-color 0.2s;
+      width: 296px;
+      z-index: 2;
+
+      &__header {
+          position: relative;
+          text-align: center;
+
+          > :nth-child(1) {
+              position: absolute;
+              left: 0;
+              top: -2px;
+          }
+
+          > :nth-child(3) {
+              position: absolute;
+              right: 0;
+              top: -2px;
+          }
+      }
+
+      &__title {
+          @include ds_small-size;
+          line-height: line-height-on-grid($small-size, 2);
+          margin: 0 !important;
+          text-transform: uppercase;
+      }
+
+      &__navbuttons {
+          button {
+              background-color: transparent;
+              color: $ds_colour__text !important;
+              font-weight: $normal;
+              min-height: 40px;
+              margin: 0;
+              padding: 4px;
+              min-width:  32px;
+
+              @include ds_blocklink;
+              display: inline-block;
+
+              .ds_icon {
+                  height: 32px;
+                  padding: 0;
+                  position: static;
+                  width: 24px;
+              }
+          }
+      }
+
+      &__table {
+
+          tbody:focus-within {
+              outline: 2px solid $ds_colour__link--focus__background;
+          }
+
+          td {
+              border: 0;
+              margin: 0;
+              outline: 0;
+              padding: 0;
+          }
+
+          th {
+              @include ds_small-size;
+              color: $ds_colour__text--secondary;
+              font-weight: $normal;
+          }
+
+          button {
+              background-color: transparent;
+              border-width: 0;
+              color: $ds_colour__text;
+              font-weight: $normal;
+              min-height: 40px;
+              margin: 0;
+              padding: 0;
+              min-width: 40px;
+
+              @include ds_small-size;
+              @include ds_blocklink;
+
+              &[disabled="true"] {
+                  background-color: $ds_colour__link--disabled__background;
+                  color: $ds_colour__link--disabled;
+              }
+
+              &.ds_datepicker__current {
+                  $dp-current-outline-width: 2px;
+                  outline: $dp-current-outline-width solid $ds_colour__border--dark !important;
+                  outline-offset: #{$dp-current-outline-width * -1};
+              }
+
+              &.ds_datepicker__current[tabindex="-1"] {
+                  background: $ds_colour__grey--lighter;
+                  color: currentColor;
+              }
+
+              &.ds_datepicker__today {
+                  font-weight: $bold;
+
+                  &::after {
+                      background-color: currentColor;
+                      border-radius: 4px;
+                      bottom: 6px;
+                      content: '';
+                      height: 4px;
+                      left: 50%;
+                      margin-left: -2px;
+                      position: absolute;
+                      width: 4px;
+                  }
+              }
+
+              &.ds_selected:not(:focus) {
+                  background-color: $ds_colour__text;
+                  color: $ds_colour__white;
+              }
+          }
+      }
+
+      &__table-caption {
+          @include ds_tiny-size;
+          caption-side: bottom;
+          line-height: 2;
+          margin-top: 8px;
+      }
+
+      &__buttongroup {
+          @include ds_layout(8px);
+          overflow: visible;
+
+          // non-grid
+          button {
+              @include ds_colwidth(1,2,8px);
+              display: block;
+              float: left;
+              margin: 0;
+          }
+
+          @supports (display: grid) {
+              grid-template-columns: 1fr 1fr;
+          }
+      }
+  }
+}
+
+@include ds_media-query (medium) {
+  .ds_datepicker {
+      &__dialog {
+          position: absolute;
+
+          &__title {
+              line-height: line-height-on-grid($small-size--medium, 1.5);
+              padding: 8px 0;
+          }
+
+          &__header {
+              > :nth-child(1) {
+                  // left: 8px;
+                  top: 0;
+              }
+
+              > :nth-child(3) {
+                  // right: 8px;
+                  top: 0;
+              }
+          }
+
+          &__table th {
+              line-height: line-height-on-grid($small-size--medium, 2);
+          }
+
+          &__table-caption {
+              line-height: line-height-on-grid($tiny-size--medium, 2);
+          }
+      }
+  }
+}

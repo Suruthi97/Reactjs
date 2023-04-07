@@ -46,14 +46,14 @@ function Register() {
                             <div className="form-group">
                                 <label><h6>First Name</h6></label>
                                 <input type="text" className="form-control" onChange={onChangeHandler} value={getForm.firstName} id="firstName" name="firstName" placeholder="First name" />
-                                {getValidation.firstname && <div class="alert alert-danger" role="alert">
+                                {getValidation.firstname && <div className="alert alert-danger" role="alert">
                                     {getValidation.firstname}
                                 </div>}
                             </div>
                             <div className="form-group">
                                 <label><h6>Last Name</h6></label>
                                 <input type="text" onChange={onChangeHandler} value={getForm.lastName} className="form-control" id="lastName" name="lastName" placeholder="Last name" />
-                                {getValidation.lastname && <div class="alert alert-danger" role="alert">
+                                {getValidation.lastname && <div className="alert alert-danger" role="alert">
                                     {getValidation.lastname}
                                 </div>}
                             </div>
@@ -61,14 +61,14 @@ function Register() {
                             <div className="form-group">
                                 <label><h6>Email address</h6></label>
                                 <input type="email" className="form-control" onChange={onChangeHandler} value={getForm.email} id="email" name="email" placeholder="Enter email" />
-                                {getValidation.email && <div class="alert alert-danger" role="alert">
+                                {getValidation.email && <div className="alert alert-danger" role="alert">
                                     {getValidation.email}
                                 </div>}
                             </div>
                             <div className="form-group">
                                 <label><h6>Password</h6></label>
                                 <input type="password" className="form-control" onChange={onChangeHandler} value={getForm.password} id="password" name="password" placeholder="Enter Password" />
-                                {getValidation.password && <div class="alert alert-danger" role="alert">
+                                {getValidation.password && <div className="alert alert-danger" role="alert">
                                     {getValidation.password}
                                 </div>}
                             </div>

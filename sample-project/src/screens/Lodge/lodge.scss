@@ -1,0 +1,48 @@
+.ds_accordion__open-all {
+  display: inline-block;
+}
+.ds_radio__label {
+  padding: 10px;
+}
+.ds_checkbox__label {
+  padding: 10px;
+  color: #000000;
+}
+.ds_input--fluid-one-third {
+  max-width: 100%;
+}
+.ds_checkbox_sub_label {
+  color: rgb(100, 98, 98)
+}
+.formButtonItemLeft {
+  text-align: left;
+  background: transparent;
+  font-size: 19px;
+  margin-top: 50px !important;
+  border:none;
+  color: #1976d2;
+}
+.ds_accordion_subtitle {
+  font-weight: 200;
+}
+.ds_accordion-item__header {
+  max-height:62px;
+}
+
+.ds_accordion-item__indicator {
+  content: "";
+  border-right: 0 !important;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0px 0px 0.1875em 0.1875em;
+  border-top-color: transparent;
+  display: inline-block;
+  height: 0.75em;
+  width: 0.75em;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 24px;
+  top: 18px;
+  transition: transform 0.2s, top 0.2s;
+  pointer-events: none;
+}

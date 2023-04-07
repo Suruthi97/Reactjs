@@ -1,0 +1,21 @@
+.ds_button{
+  margin-left:5px;
+  padding-left:15px;
+  padding-right:15px;
+}
+.page{
+  margin-left:10px;
+}
+.app {
+  padding: 12px;
+}
+ol {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+.breadcrumb-separator {
+  color: #333;
+  margin: auto 6px;
+  user-select: none;
+}

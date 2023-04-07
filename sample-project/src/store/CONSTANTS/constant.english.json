@@ -1,0 +1,22 @@
+{
+    "app_title": "Caveats",
+    "lodge_title": "Create a caveat",
+    "lodge_description_1": "Please use the form below to register the details of the party and caveat.",
+    "lodge_description_2": "When the party lodging the caveat is not also the subject, a section will become available to register those details.",
+    "content_Lorem_ipsum": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien faucibus et molestie ac.",
+    "accordian_header_panel_1": "Party the caveat applies to",
+    "accordian_header_panel_2": "Party lodging the caveat ",
+    "accordian_header_panel_2_additional": "(if not the above)",
+    "accordian_header_panel_3": "Caveat details",
+    "first_name": "First name(s)",
+    "last_name": "Last name",
+    "postcode": "Postcode (Optional)",
+    "country": "Country",
+    "is_party_lodger": "This party is a lodger",
+    "solicitor_reference": "Solicitor's reference",
+    "primary_contact": "Primary contact",
+    "alter_contact": "Out-of-hour / alternative contact(s)",
+    "submission_court": "Submission court",
+    "credit_account_to_charge": "Credit account to charge"
+
+}
